@@ -51,8 +51,8 @@ end
 
 def turn(board)
     puts "Please enter 1-9:"
-    user_input = gets.strip
-    index = input_to_index(user_input)
+    # user_input = gets.strip
+    index = input_to_index(gets.strip)
     if (valid_move?(board, index))
         move(board, index, current_player(board))
         display_board(board)
@@ -72,9 +72,9 @@ def won?(board)
         position_3 = board[win_index_3] 
         
         if position_1 == "X" && position_2 == "X" && position_3 == "X"
-        return combination 
+            return combination 
         elsif position_1 == "O" && position_2 == "O" && position_3 == "O"
-        return combination
+            return combination
         end
     end
     return false
@@ -87,7 +87,7 @@ def full?(board)
 end
   
 def draw?(board)
-    return true if (full?(board) && !won?(board))
+    return true if full?(board) && !won?(board)
 end
   
 def over?(board)
